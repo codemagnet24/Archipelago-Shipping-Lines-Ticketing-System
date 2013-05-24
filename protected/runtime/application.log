@@ -560,3 +560,32 @@ Stack trace:
 REQUEST_URI=/arc/index.php?r=site/page&view=about
 HTTP_REFERER=http://172.31.1.31/arc/index.php?r=site/index
 ---
+2013/05/24 11:40:43 [error] [exception.CException] exception 'CException' with message 'Property "TbMenu.0" is not defined.' in /var/www/yii/framework/base/CComponent.php:173
+Stack trace:
+#0 /var/www/yii/framework/web/CWidgetFactory.php(161): CComponent->__set('0', '<div class="pul...')
+#1 /var/www/yii/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(SiteController), 'bootstrap.widge...', Array)
+#2 /var/www/yii/framework/web/CBaseController.php(172): CBaseController->createWidget('bootstrap.widge...', Array)
+#3 /var/www/shipping/protected/extensions/bootstrap/widgets/TbNavbar.php(167): CBaseController->widget('bootstrap.widge...', Array)
+#4 /var/www/yii/framework/web/CBaseController.php(173): TbNavbar->run()
+#5 /var/www/shipping/protected/views/layouts/main.php(39): CBaseController->widget('bootstrap.widge...', Array)
+#6 /var/www/yii/framework/web/CBaseController.php(126): require('/var/www/shippi...')
+#7 /var/www/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/shippi...', Array, true)
+#8 /var/www/yii/framework/web/CController.php(784): CBaseController->renderFile('/var/www/shippi...', Array, true)
+#9 /var/www/shipping/protected/controllers/SiteController.php(58): CController->render('index')
+#10 /var/www/yii/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#11 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#12 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#13 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#14 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#15 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#16 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#17 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#18 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('index')
+#20 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/index')
+#21 /var/www/yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#22 /var/www/shipping/index.php(13): CApplication->run()
+#23 {main}
+REQUEST_URI=/shipping/index.php?r=site/index
+HTTP_REFERER=https://172.31.1.16/shipping/index.php?r=site/page&view=about
+---
